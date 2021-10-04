@@ -6,7 +6,7 @@ export const RandomArray = React.forwardRef((props, ref) => {
       {props.randomArray.map((num, index) => {
         return (
           <div key={index} style={{ height: num * 20 + 'px' }} className='item'>
-            <p>{num}</p>
+            <p id="barValue">{num}</p>
           </div>
         )
       })}

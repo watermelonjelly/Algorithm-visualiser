@@ -1,31 +1,35 @@
 import React, {useState}from 'react';
 import './App.css';
-import BubbleSort from './components/BubbleSort';
-import Modal from './components/modal';
+import Button from 'react-bootstrap/Button';
+import BubbleSort from './components/bubbleSort';
+import PopModal from './components/PopModal';
 import Logo from './assets/img/logo.png';
 import Mentor from './assets/img/mentor.png';
 import Mentee from './assets/img/mentee.png';
+import Slider from './components/Slider';
 
 
 function App() {
-  const[isOpen,setIsOpen] = useState(false);
-  const toggleModal = () => {
-    setIsOpen(!isOpen);
-  }  
+  const [modalShow, setModalShow] = useState(false);
   return (
     <div className="AppContainer">
       <div className="Header">
         <img src={Logo} alt="header" />
       </div>
+      <div className="Carousel">
+        <Slider></Slider>
+      </div>
       <div className="arraybars">
         <BubbleSort></BubbleSort>
       </div>
       <div className="Button">
-        {!isOpen?
-        <button onClick={toggleModal} className="button">Bubble sort</button>
-        :<Modal handler={toggleModal}>
-        </Modal>
-        }
+      <Button variant="primary" onClick={() => setModalShow(true)}>
+        Bubble Sort
+      </Button>
+      <PopModal
+        show={modalShow}
+        onHide={() => setModalShow(false)}>
+      </PopModal>
         
       </div>
       <div className="Mentor">
