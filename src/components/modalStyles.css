@@ -1,0 +1,28 @@
+.modal{
+    width: 800px;
+    height:500px;
+    max-width: 100%;
+    margin:0;
+    position:absolute;
+    display:flex;
+    flex-direction: column;
+    border-radius: 10px;
+    border-style: solid;
+
+
+}
+.modalCloseButton{
+    margin-bottom: 15px;
+    padding: 3px 8px;
+    cursor: pointer;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    font-weight: bold;
+    align-self: flex-end;
+}
+#bubble{
+    width:100px;
+    height:100px;
+    align-self: center;
+}
