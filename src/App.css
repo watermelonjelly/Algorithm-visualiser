@@ -9,7 +9,7 @@ body{
   margin-right: auto;
 } */
 .arraybars{
-  display: relative;
+  display: block;
   position:absolute;
   height:210px;
   width: 540px;
@@ -74,3 +74,11 @@ body{
   /* 50% {left: -45px} */
   100% {left: -45px}
 }
+.Carousel{
+  display: block;
+  position: relative;
+}
+/* .d-block_w-100{
+  display: block;
+  width: 100%;
+} */

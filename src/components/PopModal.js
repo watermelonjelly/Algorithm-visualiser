@@ -1,6 +1,7 @@
 import React from 'react';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
+import bubbleImg from '../assets/img/bubblesort.png';
 
 function PopModal(props) {
     return (
@@ -17,7 +18,7 @@ function PopModal(props) {
         </Modal.Header>
         <Modal.Body>
           <h4>Bubble Sort</h4>
-          <img src="./assets/img/bubblesort.png" alt="bubble-img"/>
+          <img src={bubbleImg} alt="bubble-img"/>
           <p>
           Bubble sort is a simple sorting algorithm that repeatedly steps through the list, 
           compares adjacent elements and swaps them if they are in the wrong order. 
