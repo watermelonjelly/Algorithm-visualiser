@@ -30,9 +30,15 @@ class BubbleSort extends Component {
     this.lenOfRandomArray = 12 
     
     for(let i=0; i<this.lenOfRandomArray;i++){
+<<<<<<< HEAD
       let randomIndex = Math.floor(Math.random()*this.orderArray.length);
       this.randomArray.push(this.orderArray[randomIndex]);
       this.orderArray.splice(randomIndex,1);
+=======
+	let randomIndex = Math.floor(Math.random()*this.orderArray.length);
+	this.randomArray[i]=this.orderArray[randomIndex].num;
+	this.orderArray.splice(randomIndex,1);
+>>>>>>> f83351cccfaa72a45e1a7df7c32dad3f106cf720
     }
 
     
