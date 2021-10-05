@@ -7,13 +7,40 @@ class BubbleSort extends Component {
     this.ref = React.createRef()
     console.log('bubble sort')
     this.swap.bind(this)
+    
     // generate bars
-    this.lenOfRandomArray = 12  // length of random array
+    this.orderArray=[
+
+      {num:1, note:'A', audio:'./assets/notes/A.mp3'},
+      {num:2, note:'Ab', audio:'./assets/notes/Ab.mp3'},
+      {num:3, note:'Ab', audio:'./assets/notes/B.mp3'},
+      {num:4, note:'B', audio:'./assets/notes/Bb.mp3'},
+      {num:5, note:'Bb', audio:'./assets/notes/C.mp3'},
+      {num:6, note:'C', audio:'./assets/notes/D.mp3'},
+      {num:7, note:'D', audio:'./assets/notes/Db.mp3'},
+      {num:8, note:'Db', audio:'./assets/notes/E.mp3'},
+      {num:9, note:'E', audio:'./assets/notes/Eb.mp3'},
+      {num:10, note:'Eb', audio:'./assets/notes/F.mp3'},
+      {num:11, note:'F', audio:'./assets/notes/G.mp3'},
+      {num:12, note:'G', audio:'./assets/notes/Gb.mp3'}
+      
+      
+      ]
     this.randomArray = []
-    for (let i = 0; i < this.lenOfRandomArray; i++) {
-      this.randomArray.push(Math.floor(Math.random() * 12  + 1)) // generate num and push into the array
+    this.lenOfRandomArray = 12  // length of random array
+    // for (let i = 0; i < this.lenOfRandomArray; i++) {
+    //   this.randomArray.push(Math.floor(Math.random() * 12  + 1)) // generate num and push into the array
+    // }
+    
+    
+    for(let i=0; i<this.lenOfRandomArray;i++){
+      let randomIndex = Math.floor(Math.random()*12 + 1);
+      this.randomArray[i]=this.orderArray[randomIndex].num;
+      this.orderArray.splice(randomNum,1);
     }
-    console.log(this.randomArray)
+
+    
+    console.log(this.randomArray);
   }
 
   sleep(ms) {
