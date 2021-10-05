@@ -3,10 +3,10 @@ import React from 'react'
 export const RandomArray = React.forwardRef((props, ref) => {
   return (
     <div style={{ 'display': 'flex', alignItems: 'flex-end' }} ref={ref} className='items'>
-      {props.randomArray.map((num, index) => {
+      {props.randomArray.map(({num,note},index) => {
         return (
           <div key={index} style={{ height: num * 20 + 'px' }} className='item'>
-            <p id="barValue">{num}</p>
+            <p id="barValue">{note}</p>
           </div>
         )
       })}
