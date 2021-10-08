@@ -8,9 +8,7 @@ class BubbleSort extends Component {
     console.log('bubble sort')
     this.swap.bind(this)
     
-    // generate bars
     this.orderArray=[
-
       {num:1, note:'A', audio:'./assets/notes/A.mp3'},
       {num:2, note:'Ab', audio:'./assets/notes/Ab.mp3'},
       {num:3, note:'Ab', audio:'./assets/notes/B.mp3'},
@@ -23,22 +21,14 @@ class BubbleSort extends Component {
       {num:10, note:'Eb', audio:'./assets/notes/F.mp3'},
       {num:11, note:'F', audio:'./assets/notes/G.mp3'},
       {num:12, note:'G', audio:'./assets/notes/Gb.mp3'}
-      
-      
-      ]
+    ]
     this.randomArray = []
     this.lenOfRandomArray = 12 
     
     for(let i=0; i<this.lenOfRandomArray;i++){
-<<<<<<< HEAD
       let randomIndex = Math.floor(Math.random()*this.orderArray.length);
       this.randomArray.push(this.orderArray[randomIndex]);
       this.orderArray.splice(randomIndex,1);
-=======
-	let randomIndex = Math.floor(Math.random()*this.orderArray.length);
-	this.randomArray[i]=this.orderArray[randomIndex].num;
-	this.orderArray.splice(randomIndex,1);
->>>>>>> f83351cccfaa72a45e1a7df7c32dad3f106cf720
     }
 
     
@@ -87,11 +77,11 @@ class BubbleSort extends Component {
 
     while (rightIndex < indexOfLastSortedNum) {
       // if left side is greater than rightside, swap the position
-      if (this.randomArray[leftIndex] > this.randomArray[rightIndex]) {
+      if (this.randomArray[leftIndex].num > this.randomArray[rightIndex].num) {
         this.swap(leftIndex, rightIndex)
         console.log(`swap ${leftIndex} and ${rightIndex}`)
         await this.sleep(800)
-        if (rightIndex + 1 < this.lenOfRandomArray && this.randomArray[rightIndex] > this.randomArray[rightIndex + 1]) {
+        if (rightIndex + 1 < this.lenOfRandomArray && this.randomArray[rightIndex].num > this.randomArray[rightIndex + 1].num) {
           this.checking(rightIndex, rightIndex + 1, 300)
           await this.sleep(300)
         }

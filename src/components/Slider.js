@@ -1,42 +1,44 @@
 import React from 'react';
 import Carousel from 'react-bootstrap/Carousel';
 import slider1 from "../assets/img/slider1.jpeg";
+import slider2 from "../assets/img/slider2.jpeg";
+import slider3 from "../assets/img/slider3.jpeg";
 
 
 const Slider = () => {
     return (
         <Carousel>
-            <Carousel.Item interval={2000}>
+            <Carousel.Item interval={1000}>
                 <img
                     className="d-block w-100"
                     src={slider1}
                     alt="First slide"
                 />
                 <Carousel.Caption>
-                    <h3>Technology is about Creativity</h3>
-                    <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                    <h1>Exposure to Technology</h1>
+                    <p>Meet industry professionals, listen to their stories...</p>
                 </Carousel.Caption>
             </Carousel.Item>
-            <Carousel.Item interval={2000}>
+            <Carousel.Item interval={1000}>
                 <img
                     className="d-block w-100"
-                    src={slider1}
+                    src={slider2}
                     alt="Second slide"
                 />
                 <Carousel.Caption>
-                    <h3>Technology is about Imagination</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <h1>Believe all the possibilities</h1>
+                    <p>Explore your greatest strength and value</p>
                 </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
                 <img
                     className="d-block w-100"
-                    src={slider1}
+                    src={slider3}
                     alt="Third slide"
                 />
                 <Carousel.Caption>
-                    <h3>Technology is about Innovation</h3>
-                    <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+                    <h1>Bring diversity to IT world</h1>
+                    <p>Inspire| Motivate| Encourage|Educate</p>
                 </Carousel.Caption>
             </Carousel.Item>
         </Carousel>
