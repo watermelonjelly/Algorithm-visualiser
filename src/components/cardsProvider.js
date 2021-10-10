@@ -41,7 +41,7 @@ function cardsProvider(props) {
                     <Card className="bg-dark text-white m-4">
                         <Card.Img variant="top" src={Card3} />
                         <Card.Body>
-                        <Card.Title>Programming Lanuage & Framework</Card.Title>
+                        <Card.Title>Programming Lanuage</Card.Title>
                         <Card.Text>
                             We talk about the popular technology used in the really world and my mentor provides useful advices for my furture learning.
                         </Card.Text>
@@ -78,7 +78,7 @@ function cardsProvider(props) {
                         <Card.Body>
                         <Card.Title>Build fundamental skills</Card.Title>
                         <Card.Text>
-                            My greatest expereience from the mentorship is I feel inspired and encouraged to keep continuous learning and building skills.
+                            The most valuable treasure I gained is being inspired and encouraged to keep continuous learning.
                         </Card.Text>
                         </Card.Body>
                     </Card>

@@ -10,6 +10,7 @@ import Navbar from './components/navbar';
 import Footer from './components/footer';
 import CardsProvider from './components/cardsProvider';
 import AudioPlayer from './components/audioPlayer';
+import Rollout from './components/rollout';
 
 import Mentor from './assets/img/mentor.png';
 import Mentee from './assets/img/mentee.png';
@@ -31,8 +32,7 @@ function App() {
         <CardsProvider></CardsProvider>
       </div>
 
-      <Container className="m-5">
-        <div className="demo" id="algo">
+      <Container className="mt-5" id="algo">
           <PopModal
             show={modalShow}
             onHide={() => setModalShow(false)}>
@@ -43,19 +43,18 @@ function App() {
           <div className="Mentee">
             <img src={Mentee} alt="character2" id ="mentee1"/>
           </div>
-          <div className="arraybars">
+          <Container className="arraybars mr-2">
             <Button variant="outline-success mr-2" active onClick={() => setModalShow(true)}>
               What is Bubble Sort?
             </Button>
             <Button variant="outline-info mr-2" active onClick={() => {toggleBarShow()}}>
-              Let's get start Visualiser!
+              Let's get start Visualizer!
             </Button>
             {barShow && 
             <BubbleSort></BubbleSort>}
-          </div>
-        </div>
+          </Container>
       </Container>
-
+      <Rollout></Rollout>
       <Footer></Footer>
     </Container>
   );

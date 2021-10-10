@@ -12,8 +12,6 @@ body{
 .arraybars{
   display: block;
   position:absolute;
-  height:300px;
-  width: 540px;
   margin-left: auto;
   margin-right: auto;
 }
