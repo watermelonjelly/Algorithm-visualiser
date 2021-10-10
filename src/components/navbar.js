@@ -13,7 +13,7 @@ function nav(props) {
     return (
         <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
             <Container fluid>
-                <Navbar.Brand href="#home">
+                <Navbar.Brand href="#home" className="bg-info text-white text-center font-weight-bold">
                 <img
                     alt=""
                     src={brand}
@@ -33,9 +33,9 @@ function nav(props) {
                         <Nav.Link href="#home">Home</Nav.Link>
                         <Nav.Link href="#cardTank">Activities</Nav.Link>
                         <NavDropdown title="Visualising Algorithm" id="navbarScrollingDropdown">
+                        <NavDropdown.Item href="#algo">Sorting</NavDropdown.Item>
                         <NavDropdown.Item href="#algo">Bubble Sort</NavDropdown.Item>
-                        <NavDropdown.Item href="#algo">Insertion Sort</NavDropdown.Item>
-                        <NavDropdown.Item href="#algo">Selection Sort</NavDropdown.Item>
+                        <NavDropdown.Item href="#algo"></NavDropdown.Item>
                         </NavDropdown>
                     </Nav>
                     <Form className="d-flex">

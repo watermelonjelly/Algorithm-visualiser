@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { RandomArray } from './RandomArray';
+import AudioPlayer from './audioPlayer';
 
 class BubbleSort extends Component {
   constructor() {
@@ -9,31 +10,37 @@ class BubbleSort extends Component {
     this.swap.bind(this)
     
     this.orderArray=[
-      {num:1, note:'A', audio:'./assets/notes/A.mp3'},
-      {num:2, note:'Ab', audio:'./assets/notes/Ab.mp3'},
-      {num:3, note:'Ab', audio:'./assets/notes/B.mp3'},
-      {num:4, note:'B', audio:'./assets/notes/Bb.mp3'},
-      {num:5, note:'Bb', audio:'./assets/notes/C.mp3'},
-      {num:6, note:'C', audio:'./assets/notes/D.mp3'},
-      {num:7, note:'D', audio:'./assets/notes/Db.mp3'},
-      {num:8, note:'Db', audio:'./assets/notes/E.mp3'},
-      {num:9, note:'E', audio:'./assets/notes/Eb.mp3'},
-      {num:10, note:'Eb', audio:'./assets/notes/F.mp3'},
-      {num:11, note:'F', audio:'./assets/notes/G.mp3'},
-      {num:12, note:'G', audio:'./assets/notes/Gb.mp3'}
+      {num:1, note:'A', url:'../assets/notes/A.mp3'},
+      {num:2, note:'Ab', url:'../assets/notes/Ab.mp3'},
+      {num:3, note:'Ab', url:'../assets/notes/B.mp3'},
+      {num:4, note:'B', url:'../assets/notes/Bb.mp3'},
+      {num:5, note:'Bb', url:'../assets/notes/C.mp3'},
+      {num:6, note:'C', url:'../assets/notes/D.mp3'},
+      {num:7, note:'D', url:'../assets/notes/Db.mp3'},
+      {num:8, note:'Db', url:'../assets/notes/E.mp3'},
+      {num:9, note:'E', url:'../assets/notes/Eb.mp3'},
+      {num:10, note:'Eb', url:'../assets/notes/F.mp3'},
+      {num:11, note:'F', url:'../assets/notes/G.mp3'},
+      {num:12, note:'G', url:'../assets/notes/Gb.mp3'}
     ]
     this.randomArray = []
-    this.lenOfRandomArray = 12 
+    this.lenOfRandomArray = 12
     
     for(let i=0; i<this.lenOfRandomArray;i++){
       let randomIndex = Math.floor(Math.random()*this.orderArray.length);
       this.randomArray.push(this.orderArray[randomIndex]);
       this.orderArray.splice(randomIndex,1);
     }
-
     
+    this.audioList =[]
+    for(let i=0; i<this.lenOfRandomArray;i++){
+      this.audioList.push(this.randomArray[i].audio);
+
+    }
     console.log(this.randomArray);
+    console.log(this.audioList);
   }
+
 
   sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms))
@@ -103,9 +110,12 @@ class BubbleSort extends Component {
     console.log(this.randomArray)
   }
 
+
   render() {
     return (
-      <RandomArray ref={this.ref} randomArray={this.randomArray}></RandomArray>
+      <div>
+        <RandomArray ref={this.ref} randomArray={this.randomArray}></RandomArray>
+      </div>
     )
   }
 }
