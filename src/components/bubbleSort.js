@@ -33,10 +33,10 @@ class BubbleSort extends Component {
     }
     
     this.audioList =[]
-    for(let i=0; i<this.lenOfRandomArray;i++){
-      this.audioList.push(this.randomArray[i].audio);
+    // for(let i=0; i<this.lenOfRandomArray;i++){
+    //   this.audioList.push(this.randomArray[i].url);
 
-    }
+    // }
     console.log(this.randomArray);
     console.log(this.audioList);
   }
@@ -63,7 +63,7 @@ class BubbleSort extends Component {
       children[rightIndex].classList.remove('move-right')
       leftIndex += 1
       rightIndex += 1
-    }, 800)
+    }, 1500)
   }
 
   async checking(leftIndex, rightIndex, ms) {
@@ -87,14 +87,23 @@ class BubbleSort extends Component {
       if (this.randomArray[leftIndex].num > this.randomArray[rightIndex].num) {
         this.swap(leftIndex, rightIndex)
         console.log(`swap ${leftIndex} and ${rightIndex}`)
-        await this.sleep(800)
+        this.audioList.push( 'note'+this.randomArray[leftIndex].num.toString())
+        this.audio = new Audio(this.audioList[-1])
+        this.audio.play();
+        console.log(this.audio);
+        this.audioList.push( 'note'+this.randomArray[rightIndex].num.toString())
+        this.audio = new Audio(this.audioList[-1])
+        this.audio.play();
+        console.log(this.audio);
+        console.log(this.audioList)
+        await this.sleep(1500)
         if (rightIndex + 1 < this.lenOfRandomArray && this.randomArray[rightIndex].num > this.randomArray[rightIndex + 1].num) {
           this.checking(rightIndex, rightIndex + 1, 300)
           await this.sleep(300)
         }
       } else {
-        this.checking(leftIndex, rightIndex, 800)
-        await this.sleep(800)
+        this.checking(leftIndex, rightIndex, 1500)
+        await this.sleep(1500)
       }
       if (rightIndex + 1 === indexOfLastSortedNum) {
         this.ref.current.children[rightIndex].classList.add('done')
@@ -115,6 +124,7 @@ class BubbleSort extends Component {
     return (
       <div>
         <RandomArray ref={this.ref} randomArray={this.randomArray}></RandomArray>
+        <AudioPlayer></AudioPlayer>
       </div>
     )
   }

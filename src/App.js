@@ -54,7 +54,6 @@ function App() {
             <BubbleSort></BubbleSort>}
           </div>
         </div>
-          <AudioPlayer></AudioPlayer>
       </Container>
 
       <Footer></Footer>
