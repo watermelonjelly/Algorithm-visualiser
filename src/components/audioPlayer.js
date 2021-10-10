@@ -30,11 +30,15 @@ class AudioPlayer extends React.Component {
   }
 
   updateAudio() {
-      for(let i=1; i<this.audioList;i++){
+      for(let i=0; i<this.audioList.length;i++){
       this.audio = new Audio(this.audioList[i]);
+      this.sleep(1000);
       this.audio.play();
       console.log(this.audio);
       }
+  }
+  sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms))
   }
 
   // togglePlay() {
@@ -52,7 +56,9 @@ class AudioPlayer extends React.Component {
   render() {
     return (
       <div>
-        <audio controls autoPlay></audio>
+        {this.audioList.map((audio,index) =>
+        <audio key={index} src={audio} controls autoPlay></audio>
+        )}
       </div>
     );
   }
