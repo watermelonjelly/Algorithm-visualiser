@@ -12,16 +12,16 @@ class BubbleSort extends Component {
     this.orderArray=[
       {num:1, note:'A', url:'../assets/notes/A.mp3'},
       {num:2, note:'Ab', url:'../assets/notes/Ab.mp3'},
-      {num:3, note:'Ab', url:'../assets/notes/B.mp3'},
-      {num:4, note:'B', url:'../assets/notes/Bb.mp3'},
-      {num:5, note:'Bb', url:'../assets/notes/C.mp3'},
-      {num:6, note:'C', url:'../assets/notes/D.mp3'},
-      {num:7, note:'D', url:'../assets/notes/Db.mp3'},
-      {num:8, note:'Db', url:'../assets/notes/E.mp3'},
-      {num:9, note:'E', url:'../assets/notes/Eb.mp3'},
-      {num:10, note:'Eb', url:'../assets/notes/F.mp3'},
-      {num:11, note:'F', url:'../assets/notes/G.mp3'},
-      {num:12, note:'G', url:'../assets/notes/Gb.mp3'}
+      {num:3, note:'B', url:'../assets/notes/B.mp3'},
+      {num:4, note:'Bb', url:'../assets/notes/Bb.mp3'},
+      {num:5, note:'C', url:'../assets/notes/C.mp3'},
+      {num:6, note:'D', url:'../assets/notes/D.mp3'},
+      {num:7, note:'Db', url:'../assets/notes/Db.mp3'},
+      {num:8, note:'E', url:'../assets/notes/E.mp3'},
+      {num:9, note:'Eb', url:'../assets/notes/Eb.mp3'},
+      {num:10, note:'F', url:'../assets/notes/F.mp3'},
+      {num:11, note:'G', url:'../assets/notes/G.mp3'},
+      {num:12, note:'Gb', url:'../assets/notes/Gb.mp3'}
     ]
     this.randomArray = []
     this.lenOfRandomArray = 12
@@ -63,7 +63,7 @@ class BubbleSort extends Component {
       children[rightIndex].classList.remove('move-right')
       leftIndex += 1
       rightIndex += 1
-    }, 1500)
+    }, 800)
   }
 
   async checking(leftIndex, rightIndex, ms) {
@@ -96,14 +96,14 @@ class BubbleSort extends Component {
         this.audio.play();
         console.log(this.audio);
         console.log(this.audioList)
-        await this.sleep(1500)
+        await this.sleep(800)
         if (rightIndex + 1 < this.lenOfRandomArray && this.randomArray[rightIndex].num > this.randomArray[rightIndex + 1].num) {
           this.checking(rightIndex, rightIndex + 1, 300)
           await this.sleep(300)
         }
       } else {
-        this.checking(leftIndex, rightIndex, 1500)
-        await this.sleep(1500)
+        this.checking(leftIndex, rightIndex, 800)
+        await this.sleep(800)
       }
       if (rightIndex + 1 === indexOfLastSortedNum) {
         this.ref.current.children[rightIndex].classList.add('done')
@@ -124,7 +124,6 @@ class BubbleSort extends Component {
     return (
       <div>
         <RandomArray ref={this.ref} randomArray={this.randomArray}></RandomArray>
-        <AudioPlayer></AudioPlayer>
       </div>
     )
   }
